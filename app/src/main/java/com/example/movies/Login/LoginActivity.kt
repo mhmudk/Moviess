@@ -12,13 +12,13 @@ import com.google.firebase.auth.FirebaseAuth
 
 
 class LoginActivity : AppCompatActivity() {
-    var loginviewmodel = LoginViewModel()
+ //   var loginviewmodel = LoginViewModel()
     private lateinit var binding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        loginviewmodel = ViewModelProvider(this).get(LoginViewModel::class.java)
+   //     loginviewmodel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
 
         binding.loginTvRegister.setOnClickListener {
@@ -29,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
             binding.apply {
                 var email = loginTvEmail.text.toString()
                 var passsword = loginTvPassword.text.toString()
-                loginviewmodel.logInFirebase(email=email, password = passsword)
+     //           loginviewmodel.logInFirebase(email=email, password = passsword)
             }
         }
     }

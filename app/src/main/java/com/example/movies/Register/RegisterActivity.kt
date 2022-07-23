@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
 
-val registerViewModel =RegisterViewModel()
+//val registerViewModel =RegisterViewModel()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
@@ -34,8 +34,8 @@ val registerViewModel =RegisterViewModel()
                 var password = registerTvPassword.toString()
                 var Congpassword = registerTvConfrimPassword.toString()
 
-                registerViewModel.Registeration(email,password, User(FirebaseAuth.getInstance().currentUser!!.uid
-                ,name,email,phone,password,Congpassword))
+  //              registerViewModel.Registeration(email,password, User(FirebaseAuth.getInstance().currentUser!!.uid
+    //            ,name,email,phone,password,Congpassword))
             }
 
         }

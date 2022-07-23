@@ -20,8 +20,9 @@ import com.example.movies.RemoteDB.MoviesPopular.MoviesPopularViewModel
 import com.example.movies.RemoteDB.MoviesTopRated.MoviesViewModel
 import com.example.movies.databinding.FragmentHomeBinding
 import com.example.movies.databinding.FragmentTestBinding
+import com.example.movies.showToast
 
-class Home : Fragment() {
+class FragmentHome : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private val moviesTopRatedAdapter by lazy { MoviesTopRatedAdapter() }
@@ -78,7 +79,23 @@ class Home : Fragment() {
 
             override fun getClickedFavourite(postion: Int) {
                 Log.d("Clicked", "Postion is $postion")
-                BaseApplication.db?.getDao()?.insertMoviesFav(postion)
+                BaseApplication.db?.getDao()?.getMovies()?.forEach {
+                   if(it==null){
+                       BaseApplication.db?.getDao()?.insertMoviesFav(postion)
+                       showToast(requireContext(), "Movie Added")
+
+                   }
+                    if(it.id==postion){
+                        showToast(requireContext(),"Movie are already added")
+                        return
+                    }else{
+                        BaseApplication.db?.getDao()?.insertMoviesFav(postion)
+                        showToast(requireContext(), "Movie Added")
+
+                    }
+
+                }
+
             }
 
         })
@@ -91,6 +108,12 @@ class Home : Fragment() {
                 val intent = Intent(requireContext(), Details::class.java)
                 intent.putExtra("id", id)
                 startActivity(intent)
+            }
+
+            override fun getClickedFavourite(postion: Int) {
+                showToast(requireContext(), "Movie Added")
+                BaseApplication.db?.getDao()?.insertMoviesFav(postion)
+
             }
 
         })

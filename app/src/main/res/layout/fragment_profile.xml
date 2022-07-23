@@ -10,7 +10,7 @@
         android:id="@+id/rellay1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/grad"
+
         android:paddingBottom="20dp">
 
         <RelativeLayout
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:background="@drawable/circle_border">
+           >
 
         </RelativeLayout>
 

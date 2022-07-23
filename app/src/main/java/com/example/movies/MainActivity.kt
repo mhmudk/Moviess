@@ -15,15 +15,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        loadFragment(Home())
+        loadFragment(FragmentHome())
         binding.bottomNav.setOnNavigationItemReselectedListener {
             when (it.itemId) {
                 R.id.home_user -> {
-                    loadFragment(Home())
-                    return@setOnNavigationItemReselectedListener
-                }
-                R.id.booking_User -> {
-                    loadFragment(Booking())
+                    loadFragment(FragmentHome())
                     return@setOnNavigationItemReselectedListener
                 }
                 R.id.list_user -> {
@@ -31,7 +27,7 @@ class MainActivity : AppCompatActivity() {
                     return@setOnNavigationItemReselectedListener
                 }
                 R.id.profile_customer ->{
-                    loadFragment(Profile())
+                    loadFragment(FragmentProfile())
                     return@setOnNavigationItemReselectedListener
             }
         }

@@ -16,8 +16,8 @@
             android:layout_width="@dimen/_120sdp"
             android:layout_height="@dimen/_150sdp"
             android:layout_margin="@dimen/_5sdp"
-            app:cardElevation="@dimen/_5sdp"
-            app:cardCornerRadius="@dimen/_10sdp">
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_5sdp">
 
             <ImageView
                 android:id="@+id/id_movies"
@@ -34,17 +34,17 @@
             android:layout_width="@dimen/_120sdp"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-
+android:scrollbars="horizontal"
             android:fontFamily="@font/metrophobic"
             android:text="Name of movie "
             android:textColor="#4A4B4D"
             android:textSize="@dimen/_15ssp" />
+
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/_8sdp"
             android:orientation="horizontal"
-
             >
 
             <TextView
@@ -54,24 +54,29 @@
                 android:text="10/"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_15ssp" />
+
             <TextView
                 android:id="@+id/toprated_movies"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:fontFamily="@font/metrophobic"
+
                 android:text=" 5.6"
-                android:layout_weight="1"
                 android:textColor="@color/colorprimary"
                 android:textSize="@dimen/_15ssp" />
 
-
+            <ImageView
+                android:id="@+id/imgFav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_gravity="center|end"
+                android:layout_weight="1"
+                android:src="@drawable/ic_heart"  />
         </LinearLayout>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_heart"
-            android:id="@+id/imgFav"
-            android:layout_gravity="center|end"/>
+
+
     </LinearLayout>
 
 </LinearLayout>
